@@ -1,37 +1,30 @@
-// src/model/Acessorio.ts
 import { Produto } from "./Produto"
 
 export class Acessorio extends Produto {
-  private _tipo: string
+  private _marca: string;
 
-  constructor(
-    id: number,
-    nome: string,
-    preco: number,
-    quantidade: number,
-    tipo: string
-  ) {
-    super(id, nome, preco, quantidade)
-    this._tipo = tipo
+  constructor(marca: string, etiqueta: number, nome: string, preco: number, quantidade: number) {
+    super(etiqueta, nome, preco, quantidade)
+    this._marca = marca
   }
 
-  public get tipo(): string {
-    return this._tipo
+  public get marca(): string {
+    return this._marca
   }
 
-  public set tipo(tipo: string) {
-    this._tipo = tipo
+  public set marca(marca: string) {
+    this._marca = marca
   }
 
-  // Implementação do método abstrato
+ //Visualizacao
   public visualizar(): void {
     console.log("\n--------------------------------------")
-    console.log("📦 Produto: Acessório")
-    console.log(`ID: ${this.id}`)
+    console.log("Informações do Produto")
+    console.log(`Etiqueta: ${this.etiqueta}`)
     console.log(`Nome: ${this.nome}`)
     console.log(`Preço: R$ ${this.preco.toFixed(2)}`)
     console.log(`Quantidade: ${this.quantidade}`)
-    console.log(`Tipo: ${this.tipo}`)
+    console.log(`Marca: ${this.marca}`)
     console.log("--------------------------------------")
   }
 }
